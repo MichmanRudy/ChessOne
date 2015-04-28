@@ -271,9 +271,45 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, 
 	HWND hWnd = CreateWindowEx(0, wcl.lpszClassName, L"Chess", WS_SYSMENU,
 		100, 
 		100, 
-		615, 
+		700, 
 		640,
 		0, 0, hInstance, 0);
+
+
+	HWND ControlField1 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP,
+		620,
+		50,
+		40,
+		40,
+		hWnd, (HMENU)101, hInstance, 0);
+
+	HWND ControlField2 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP,
+		620,
+		130,
+		40,
+		40,
+		hWnd, (HMENU)102, hInstance, 0);
+
+	HWND ControlField3 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP,
+		620,
+		210,
+		40,
+		40,
+		hWnd, (HMENU)102, hInstance, 0);
+
+	HWND ControlField4 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP,
+		620,
+		290,
+		40,
+		40,
+		hWnd, (HMENU)103, hInstance, 0);
+
+	HWND ControlField5 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP,
+		620,
+		370,
+		40,
+		40,
+		hWnd, (HMENU)104, hInstance, 0);
 
 /*
 	HWND hButton = CreateWindowEx(WS_EX_CLIENTEDGE, L"Button", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP ,
@@ -473,13 +509,52 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, 
 LRESULT CALLBACK WinProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 {
 	//Field ChessField;
+	HDC hdc;
+	PAINTSTRUCT ps;
+	RECT rect;
 	HINSTANCE hInstance = (HINSTANCE)::GetModuleHandle(NULL);
+	LPCTSTR  Control1 = L"1st Sel:";
+	LPCTSTR  Control2 = L"2nd Sel:";
+	LPCTSTR  Control3 = L"3st Sel:";
+	LPCTSTR  Control4 = L"4nd Sel:";
+	LPCTSTR  Control5 = L"5th Sel:";
 
 	switch (Message)
 	{
 		
 	case WM_PAINT:
 	
+		hdc = BeginPaint(hWnd, &ps);
+		GetClientRect(hWnd, &rect);
+
+		//   DrawText (hdc, OurText[i],-1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
+		//i= abs(i- 1);
+		TextOut(hdc, 
+			610,
+			30,
+			Control1, lstrlen(Control1));
+
+		TextOut(hdc,
+			610,
+			110,
+			Control2, lstrlen(Control2));
+		
+		TextOut(hdc,
+			610,
+			190,
+			Control3, lstrlen(Control3));
+
+		TextOut(hdc,
+			610,
+			270,
+			Control4, lstrlen(Control4));
+			
+		TextOut(hdc,
+			610,
+			350,
+			Control5, lstrlen(Control5));
+		
+		EndPaint(hWnd, &ps);
 		
 		break;
 
