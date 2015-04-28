@@ -160,6 +160,11 @@ bool Field::MovementRulesCheck(int k)
 	
 }
 
+COORD Field::GetSelected()
+{
+	return selected;
+}
+
 Field::~Field()
 {
 }

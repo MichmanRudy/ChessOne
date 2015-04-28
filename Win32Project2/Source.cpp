@@ -519,6 +519,10 @@ LRESULT CALLBACK WinProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 	LPCTSTR  Control4 = L"4nd Sel:";
 	LPCTSTR  Control5 = L"5th Sel:";
 
+	size_t strlen=0;
+	WCHAR* buff;
+
+
 	switch (Message)
 	{
 		
@@ -577,7 +581,20 @@ LRESULT CALLBACK WinProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 		switch (HIWORD(wParam))
 		{
 		case BN_CLICKED:
-			if (!ChessField1.GetIsSelected()) ChessField1.SetSelected( LOWORD(wParam));
+			if (!ChessField1.GetIsSelected())
+			{
+			
+				ChessField1.SetSelected(LOWORD(wParam));
+		/*		strlen = 2;
+				buff = new WCHAR[strlen];
+				buff = (LPWSTR)ChessField1.GetSelected().X;
+				GetDlgItemText(hWnd, 101, buff, strlen);
+				buff = (LPWSTR)ChessField1.GetSelected().Y;
+				GetDlgItemText(hWnd, 102, buff, strlen);
+				delete[]buff;*/
+				
+			}
+
 			else
 			{
 				ChessField1.SetSelected(LOWORD(wParam));
