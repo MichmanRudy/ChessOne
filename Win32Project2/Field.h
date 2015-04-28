@@ -10,6 +10,7 @@ public:
 	Field();
 	void SetDesk(int k);
 	void SetSelected( int k);
+	void SetIsSelected(bool wha);
 	COORD GetSelected();
 	int GetDeskValue(int Position);
 	COORD TranslateKtoIJ(int k);

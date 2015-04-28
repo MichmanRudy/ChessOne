@@ -595,12 +595,13 @@ LRESULT CALLBACK WinProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 				
 			}
 
-			else
+			else if (ChessField1.MovementRulesCheck(LOWORD(wParam)))
 			{
 				ChessField1.SetSelected(LOWORD(wParam));
 				ChessField1.SetDesk(LOWORD(wParam));
 				RedrawField(hWnd, hInstance);
 			}
+			else ChessField1.SetIsSelected(false);
 		
 
 		/*	switch (LOWORD(wParam))

@@ -1,11 +1,14 @@
-﻿Build started 4/28/2015 4:31:51 AM.
+﻿Build started 4/28/2015 9:21:21 AM.
      1>Project "C:\Users\Administrator\Downloads\Chess-2015-04-13\Chess-2015-04-14\Win32Project2\Win32Project2\Win32Project2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Field.cpp Source.cpp
          Source.cpp
      1>c:\users\administrator\downloads\chess-2015-04-13\chess-2015-04-14\win32project2\win32project2\source.cpp(579): warning C4065: switch statement contains 'default' but no 'case' labels
      1>c:\users\administrator\downloads\chess-2015-04-13\chess-2015-04-14\win32project2\win32project2\source.cpp(523): warning C4101: 'buff' : unreferenced local variable
-     1>c:\users\administrator\downloads\chess-2015-04-13\chess-2015-04-14\win32project2\win32project2\source.cpp(626): warning C4715: 'WinProc' : not all control paths return a value
+         Field.cpp
+         Generating Code...
+     1>c:\users\administrator\downloads\chess-2015-04-13\chess-2015-04-14\win32project2\win32project2\field.cpp(161): warning C4715: 'Field::MovementRulesCheck' : not all control paths return a value
+     1>c:\users\administrator\downloads\chess-2015-04-13\chess-2015-04-14\win32project2\win32project2\source.cpp(627): warning C4715: 'WinProc' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Downloads\Chess-2015-04-13\Chess-2015-04-14\Win32Project2\Debug\Win32Project2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Administrator\Downloads\Chess-2015-04-13\Chess-2015-04-14\Win32Project2\Debug\Win32Project2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Downloads\Chess-2015-04-13\Chess-2015-04-14\Win32Project2\Debug\Win32Project2.lib" /MACHINE:X86 Debug\Win32Project2.res
          Debug\Field.obj
@@ -17,4 +20,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.30
+Time Elapsed 00:00:05.52

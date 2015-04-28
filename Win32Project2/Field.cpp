@@ -165,6 +165,11 @@ COORD Field::GetSelected()
 	return selected;
 }
 
+void Field::SetIsSelected(bool wha)
+{
+	IsSelected = wha;
+}
+
 Field::~Field()
 {
 }
