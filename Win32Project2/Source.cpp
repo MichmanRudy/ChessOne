@@ -276,14 +276,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, 
 		0, 0, hInstance, 0);
 
 
-	HWND ControlField1 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP,
+	HWND ControlField1 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Edit", L"", WS_VISIBLE | WS_CHILD ,
 		620,
 		50,
 		40,
 		40,
 		hWnd, (HMENU)101, hInstance, 0);
 
-	HWND ControlField2 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD | BS_BITMAP,
+	HWND ControlField2 = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"", WS_VISIBLE | WS_CHILD ,
 		620,
 		130,
 		40,
@@ -585,13 +585,15 @@ LRESULT CALLBACK WinProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 			{
 			
 				ChessField1.SetSelected(LOWORD(wParam));
-		/*		strlen = 2;
+				strlen = 2;
 				buff = new WCHAR[strlen];
 				buff = (LPWSTR)ChessField1.GetSelected().X;
-				GetDlgItemText(hWnd, 101, buff, strlen);
+				SetDlgItemText(hWnd, 101, (LPWSTR)ChessField1.GetSelected().X);
+				delete[]buff;
+				buff = new WCHAR[strlen];
 				buff = (LPWSTR)ChessField1.GetSelected().Y;
-				GetDlgItemText(hWnd, 102, buff, strlen);
-				delete[]buff;*/
+				SetDlgItemText(hWnd, 102, buff);
+				delete[]buff;
 				
 			}
 
